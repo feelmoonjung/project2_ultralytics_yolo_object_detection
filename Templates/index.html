@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>YOLO Model IMAGE DETECTOR</title>
+    <link rel = 'stylesheet' href = '{{url_for('static', filename = 'style.css') }}'>
+    <meta charset = 'utf-8'>
+    <meta name = 'viewport' content = 'width = device-width, initial-scale = 1'>
+</head>
+<body>
+    <h1>불량 소자 검출</h1>
+    <div class="agile-its">
+        <h2>이미지 첨부</h2>
+        <div class="w3layouts">
+            <div class="photos-upload-view">
+                <form id="upload" action="/predict" method="POST" enctype="multipart/form-data">
+                    <div class="upload-btn-wrapper">
+                        <button class="btn">이미지 업로드</button>
+                        <!-- <input type="file" value="Upload" name="file"> -->
+                        <input type="file" value="Upload" name="file">
+                    </div>
+                    <br>
+                </br>
+                    <input type="submit" value="이미지 예측">
+                    {% if ml_label %}
+                        <span class="result">
+                            {{ ml_label }}
+                        </span>
+                    {% endif %} 
+                </form>
+</body>

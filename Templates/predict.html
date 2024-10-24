@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <title>YOLO Model as a Flask API</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<h1>불량 소자 검출</h1>
+<div class="agile-its">
+    <h2>예측 결과</h2>
+    <div class="w3layouts">
+        <div class="view">    
+            <span class="result"> 
+                <center>
+                <p>
+                    {% if True %}
+                    <img src="{{ url_for('static', filename = 'uploads/result.png' ) }}" alt="사진" width="400" height="400">
+                    <!-- <img src="./result.png" alt="사진" width="400" height="400"> -->
+                     <!-- <image src = "{{ print_image }}"></image> -->
+                    {% endif %} 
+                </p>
+                <h2>{{ ml_label }}</h2>
+                <h2>class 0 : 정상 / 1 : 불량</h2>
+                <h2>Confidence : 신뢰도</h2>
+                <p>
+                    <button type="button" onclick="location.href='/' " class = "btn" style = "margin-top : 20px;">뒤로가기</button>
+                </p>
+            </center>
+            </span> 
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
